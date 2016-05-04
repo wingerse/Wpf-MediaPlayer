@@ -1,0 +1,10 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfMediaPlayer"
+    xmlns:controls="clr-namespace:WpfMediaPlayer.Controls"
+    xmlns:converters="clr-namespace:WpfMediaPlayer.Converters">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Themes/PlayTimeline.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

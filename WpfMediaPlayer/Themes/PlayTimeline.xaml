@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WpfMediaPlayer.Controls"
+                    xmlns:converters="clr-namespace:WpfMediaPlayer.Converters">
+    <Style TargetType="{x:Type controls:PlayTimeline}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:PlayTimeline">
+                    <ControlTemplate.Resources>
+                        <converters:TimespanToSecondsConverter x:Key="TimespanToSecondsConverter" />
+                        <converters:TimeSpanToStringConverter x:Key="TimeSpanToStringConverter" />
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{TemplateBinding CurrentTimeSpan, Converter={StaticResource TimeSpanToStringConverter}}" Margin="5" VerticalAlignment="Center"/>
+                        <Slider x:Name="PART_Slider" Grid.Column="1" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentTimeSpan, Converter={StaticResource TimespanToSecondsConverter}, Mode=TwoWay}" 
+                                Maximum="{TemplateBinding EndTimeSpan, Converter={StaticResource TimespanToSecondsConverter}}"
+                                VerticalAlignment="Center" IsMoveToPointEnabled="True"/>
+                        <TextBlock Grid.Column="2" Text="{TemplateBinding EndTimeSpan, Converter={StaticResource TimeSpanToStringConverter}}" Margin="5" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<Application x:Class="WpfMediaPlayer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfMediaPlayer"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Rectangle x:Key="StopRectangle" Fill="Red" Height="20" Width="20" />
+        <Polygon x:Key="PlayShape" Fill="DodgerBlue" Points="0,0 20,10 0,20" />
+        <Path x:Key="PauseShape" Fill="DodgerBlue" Data="M 0,0 L 7,0 L 7,20 L 0,20 M 13,0 L 20,0 L 20,20 L 13,20" />
+    </Application.Resources>
+</Application>
